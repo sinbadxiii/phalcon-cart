@@ -1,8 +1,8 @@
-#Phalcon Shopping Cart
+# Phalcon Shopping Cart
 
 A simple shoppingcart implementation for Phalcon.
 
-###Installation
+### Installation
 
 Install the package through Composer.
 
@@ -12,7 +12,7 @@ Run the Composer require command from the Terminal:
 composer require sinbadxiii/phalcon-cart:dev-master
 ```
 
-##How use
+## How use
 
 Add in services
 
