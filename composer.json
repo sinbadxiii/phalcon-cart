@@ -1,0 +1,23 @@
+{
+  "name": "sinbadxiii/phalcon-cart",
+  "description": "Phalcon package for shopping cart",
+  "type": "library",
+  "authors": [
+    {
+      "name": "sinbadxiii",
+      "email": "sinbadxiii@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Phalcon\\Cart": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phalcon\\Tests\\Cart": "/tests/"
+    }
+  }
+}
