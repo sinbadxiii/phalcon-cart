@@ -20,7 +20,7 @@ Add in services
 $di->set(
       'cart',
       function () use ($di) {
-          return new Phalcon\Cart\CartShopping(
+          return new Sinbadxiii\Phalcon\Cart\CartShopping(
               $di->getSession()
           );
       }

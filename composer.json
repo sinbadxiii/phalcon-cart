@@ -12,12 +12,12 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "Phalcon\\Cart\\": "src/"
+      "Sinbadxiii\\Phalcon\\Cart\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Phalcon\\Tests\\Cart\\": "/tests/"
+      "Sinbadxiii\\Phalcon\\Tests\\Cart\\": "/tests/"
     }
   }
 }

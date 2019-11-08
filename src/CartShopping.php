@@ -1,8 +1,8 @@
 <?php
 
-namespace Phalcon\Cart;
+namespace Sinbadxiii\Phalcon\Cart;
 
-use Phalcon\Cart\Exceptions\RowIDNotFoundException;
+use Sinbadxiii\Phalcon\Cart\Exceptions\RowIDNotFoundException;
 use Phalcon\Session\Adapter\Files as Session;
 
 class CartShopping
@@ -39,7 +39,7 @@ class CartShopping
      * Set the current cart instance.
      *
      * @param string|null $instance
-     * @return \Phalcon\Cart\CartShopping
+     * @return \Sinbadxiii\Phalcon\Cart\CartShopping
      */
     public function instance($instance = null)
     {

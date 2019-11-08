@@ -1,6 +1,6 @@
 <?php
 
-namespace Phalcon\Cart\Exceptions;
+namespace Sinbadxiii\Phalcon\Cart\Exceptions;
 
 use RuntimeException;
 

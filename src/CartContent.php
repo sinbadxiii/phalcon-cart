@@ -1,6 +1,6 @@
 <?php
 
-namespace Phalcon\Cart;
+namespace Sinbadxiii\Phalcon\Cart;
 
 class CartContent
 {
