@@ -99,8 +99,7 @@ class CartShopping
         $qty = null,
         $price = null,
         array $options = []
-    )
-    {
+    ) {
         if ($this->isMulti($id)) {
             return array_map(function ($item) {
                 return $this->add($item);
@@ -185,17 +184,21 @@ class CartShopping
      * @return string
      */
     public function total(
-        $decimals = null, $decimalPoint = null, $thousandSeperator = null
-    )
-    {
+        $decimals = null,
+        $decimalPoint = null,
+        $thousandSeperator = null
+    ) {
         $content = $this->getCartContent();
 
         $total = $content->reduce(function ($total, CartItem $cartItem) {
-            return $total + ($cartItem->qty * $cartItem->price);
+            return $total + ($cartItem->qty * $cartItem->priceTax);
         }, 0);
 
         return $this->numberFormat(
-            $total, $decimals, $decimalPoint, $thousandSeperator
+            $total,
+            $decimals,
+            $decimalPoint,
+            $thousandSeperator
         );
     }
 
@@ -206,9 +209,10 @@ class CartShopping
      * @return string
      */
     public function subtotal(
-        $decimals = null, $decimalPoint = null, $thousandSeperator = null
-    )
-    {
+        $decimals = null,
+        $decimalPoint = null,
+        $thousandSeperator = null
+    ) {
         $content = $this->getCartContent();
 
         $subTotal = $content->reduce(function ($subTotal, CartItem $cartItem) {
@@ -216,7 +220,10 @@ class CartShopping
         }, 0);
 
         return $this->numberFormat(
-            $subTotal, $decimals, $decimalPoint, $thousandSeperator
+            $subTotal,
+            $decimals,
+            $decimalPoint,
+            $thousandSeperator
         );
     }
 
@@ -225,7 +232,7 @@ class CartShopping
      *
      * @return int|float
      */
-    public function sum_count()
+    public function countTotal()
     {
         $content = $this->getCartContent();
 
@@ -277,9 +284,11 @@ class CartShopping
      * @return string
      */
     private function numberFormat(
-        $value, $decimals = 2, $decimalPoint = '.', $thousandSeperator = ','
-    )
-    {
+        $value,
+        $decimals = 2,
+        $decimalPoint = '.',
+        $thousandSeperator = ','
+    ) {
         return number_format($value, $decimals, $decimalPoint, $thousandSeperator);
     }
 }
