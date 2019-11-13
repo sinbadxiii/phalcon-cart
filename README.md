@@ -27,6 +27,19 @@ $di->set(
   );
 ```
 
+or creating with name instance
+
+```
+$di->set(
+      'compare',
+      function () use ($di) {
+          return new Sinbadxiii\Phalcon\Cart\CartShopping(
+              $di->getSession(), 'compare'
+          );
+      }
+  );
+```
+
 ```
 #add()
 $this->cart->add('1', 'Product Name 1', 1, 100.99);

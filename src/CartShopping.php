@@ -28,11 +28,11 @@ class CartShopping
      */
     private $logger;
 
-    public function __construct(Session $session)
+    public function __construct(Session $session, $instance = null)
     {
         $this->session = $session;
 
-        $this->instance(self::DEFAULT_IDENTIFICATOR);
+        $this->instance($instance ?: self::DEFAULT_IDENTIFICATOR);
     }
 
     /**
@@ -69,9 +69,9 @@ class CartShopping
             new CartContent();
         }
 
-        if ($this->session->has($this->instance)) {
-            return $this->session->get($this->instance)->getItems();
-        }
+        return ($this->session->has($this->instance)) ?
+            $this->session->get($this->instance)->getItems() :
+            [];
     }
 
     protected function getCartContent()

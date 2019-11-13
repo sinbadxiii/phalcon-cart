@@ -7,7 +7,7 @@ class CartContent
     /**
      * @var
      */
-    protected $items;
+    protected $items = [];
 
     /**
      * @param $key_item
