@@ -3,7 +3,7 @@
 namespace Sinbadxiii\Phalcon\Cart;
 
 use Sinbadxiii\Phalcon\Cart\Exceptions\RowIDNotFoundException;
-use Phalcon\Session\Adapter\Files as Session;
+use Phalcon\Session\Manager as Session;
 
 class CartShopping
 {
@@ -12,7 +12,7 @@ class CartShopping
     /**
      * Instance of the session manager.
      *
-     * @var \Phalcon\Session\Adapter\Files
+     * @var \Phalcon\Session\Manager
      */
     private $session;
 
@@ -65,7 +65,7 @@ class CartShopping
      */
     public function content()
     {
-        if (is_null($this->session->get($this->instance))) {
+        if (is_null($this->session->has($this->instance))) {
             new CartContent();
         }
 
@@ -115,6 +115,7 @@ class CartShopping
         }
 
         $content->put($cartItem->rowId, $cartItem);
+
         $this->session->set($this->instance, $content);
         return $cartItem;
     }

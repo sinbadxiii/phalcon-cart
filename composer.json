@@ -1,7 +1,9 @@
 {
   "name": "sinbadxiii/phalcon-cart",
   "description": "Phalcon package for shopping cart",
+  "keywords": ["phalcon", "shoppingcart"],
   "type": "library",
+  "license": "MIT",
   "authors": [
     {
       "name": "sinbadxiii",
